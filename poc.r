@@ -64,3 +64,24 @@ createResults <- function(hidden,training.sse, testing.sse, validation.sse)
   return(results)
 }
 
+# runs the neural net through a set of test data and calculates
+# the Squared Sum Error
+testNeuralNet <- function(nnet, testData, testResult)
+{
+  r <- compute(nnet, testData)$net.result
+  error <- sse(testResult, r)
+  return(error)
+}
+
+train <- function(maxLayers = 3, 
+                  maxNeurons = 20, 
+                  maxSteps = 10^5, 
+                  formula,
+                  trainData,
+                  testData, 
+                  testResult, 
+                  validationData, 
+                  validationResult)
+{
+  n<- neuralnet()
+}
